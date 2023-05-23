@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const [tasks, setTasks] = useState([]);
@@ -8,6 +9,8 @@ const Home = () => {
     const [editTaskId, setEditTaskId] = useState(null);
     const [editTitle, setEditTitle] = useState("");
     const [editDescription, setEditDescription] = useState("");
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem("user");
@@ -166,10 +169,16 @@ const Home = () => {
         setEditDescription(description);
     };
 
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        navigate('/');
+    }
+
     console.log(tasks)
 
     return (
         <div className="container">
+            <Button onClick={handleLogout} variant="danger">Logout</Button>
             <h1>Tasks:</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formTitle">
