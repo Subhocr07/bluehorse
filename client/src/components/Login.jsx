@@ -9,37 +9,6 @@ const Login = () => {
     });
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     const auth = localStorage.getItem("user");
-    //     if (auth) {
-    //         navigate("/home");
-    //     }
-    // }, [navigate]);
-
-    // const handleFormSubmit = (e) => {
-    //     e.preventDefault();
-    //     const options = {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             email: formData.email,
-    //             password: formData.password,
-    //         }),
-    //     };
-
-    //     fetch("http://localhost:7000/user/login", options)
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             console.log(data);
-    //             localStorage.setItem("token", data)
-    //             navigate("/home")
-    //         })
-    //         .catch((err) => {
-    //             console.log(err.message);
-    //         });
-    // };
 
     const handleFormSubmit = (e) => {
         e.preventDefault();

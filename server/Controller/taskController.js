@@ -2,6 +2,7 @@ const taskModel = require("../model/taskModel.js");
 
 exports.addTask = async (req, res) => {
   const { title, description } = req.body;
+  console.log("task Add task", title, description);
   console.log(req.body);
   const userId = req.user;
   const newTask = new taskModel({
